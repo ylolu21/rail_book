@@ -2,6 +2,11 @@
 
 <h1>Books</h1>
 
+
+<% @book_sum.each do |key, value| %>
+  <h3><%= key %> <%= value %></h3>
+<% end %>
+
 <table>
   <thead>
     <tr>
