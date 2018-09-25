@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :authors
   resources :users
   resources :books
+  get 'view/keyword'
+  post 'keyword/search'
 end
