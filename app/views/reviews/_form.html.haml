@@ -1,0 +1,23 @@
+= form_with(model: review, local: true) do |form|
+  - if review.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(review.errors.count, "error")
+        prohibited this review from being saved:
+      %ul
+        - review.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :book_id
+    = form.text_field :book_id, id: :review_book_id
+  .field
+    = form.label :user_id
+    = form.text_field :user_id, id: :review_user_id
+  .field
+    = form.label :status
+    = form.number_field :status, id: :review_status
+  .field
+    = form.label :body
+    = form.text_area :body, id: :review_body
+  .actions
+    = form.submit
